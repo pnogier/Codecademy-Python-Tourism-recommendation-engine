@@ -25,6 +25,7 @@ def get_traveler_location(traveler):
     return traveler_destination_index
 
 
+# A function to add an attraction to the attractions list
 def add_attraction(destination, attraction):
     try:
         destination_index = get_destination_index(destination)
@@ -35,6 +36,7 @@ def add_attraction(destination, attraction):
         return
 
 
+# Adding many attractions to cities
 add_attraction("Los Angeles, USA", ['Venice Beach', ['beach']])
 add_attraction("Paris, France", ["the Louvre", ["art", "museum"]])
 add_attraction("Paris, France", ["Arc de Triomphe", [
@@ -54,6 +56,7 @@ add_attraction("Cairo, Egypt", ["Pyramids of Giza", [
 add_attraction("Cairo, Egypt", ["Egyptian Museum", ["museum"]])
 
 
+# A function to find attractions with the traveler's interests
 def find_attractions(destination, interests):
     destination_index = get_destination_index(destination)
     attractions_in_city = attractions_list[destination_index]
@@ -66,6 +69,8 @@ def find_attractions(destination, interests):
     return attractions_with_interest
 
 
+# A function that eturns a string with the attraction to visit for the
+# traveler in the city where he is at the moment
 def get_attractions_for_traveler(traveler):
     traveler_desination = traveler[1]
     traveler_interests = traveler[2]
@@ -80,5 +85,7 @@ def get_attractions_for_traveler(traveler):
     return interests_str
 
 
+# Will print "Hi Dereck Smill, we think you'll like these places around
+# Paris, France: Arc de Triomphe, Tour Eiffel."
 print(get_attractions_for_traveler(
     ['Dereck Smill', 'Paris, France', ['monument']]))
